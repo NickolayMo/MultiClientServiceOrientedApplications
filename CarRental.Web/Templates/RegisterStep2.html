@@ -1,0 +1,28 @@
+﻿<div>
+    <p class="input-group" style="width:400px;">
+        <span class="input-group-addon" style="width:140px; text-align:left">
+            Login Email:
+        </span>
+        <input type="text" class="form-control" ng-model="accountModelStep2.LoginEmail" placeholder="Login Email" />
+    </p>
+
+    <p class="input-group" style="width:400px;">
+        <span class="input-group-addon" style="width:140px; text-align:left">
+            Password:
+        </span>
+        <input type="text" class="form-control" ng-model="accountModelStep2.Password" placeholder="Password" />
+    </p>
+
+    <p class="input-group" style="width:400px;">
+        <span class="input-group-addon" style="width:140px; text-align:left">
+            Confirm password:
+        </span>
+        <input type="text" class="form-control" ng-model="accountModelStep2.ConfirmPassword" placeholder="Confirm password" />
+    </p>
+
+    <hr style="width:415px; text-align:left" />
+    <div>
+        <a href="#" class="btn btn-info" ng-click="previous()">Previous</a>
+        <a href="#" class="btn btn-info" ng-click="step3()">Next</a>
+    </div>
+</div>
