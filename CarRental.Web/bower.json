@@ -1,0 +1,28 @@
+{
+    "name": "asp.net",
+    "directory": "componets",
+    "private": true,
+    "dependencies": {
+        "angularjs": "1.5.5",
+        "moment-js": "0.3.0",
+        "angular-ui": "0.4.0",
+        "toast": "2.1.1",
+        "less": "2.7.1",
+        "font-awesome": "4.6.3"
+    },
+    "authors": [
+        "Mokrenko Nickolay <kolya456@gmail.com>"
+    ],
+    "description": "",
+    "main": "",
+    "moduleType": [ ],
+    "license": "MIT",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
