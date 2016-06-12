@@ -8,13 +8,13 @@
         <script src="@Url.Content("~/Binding/Models/AccountRegisterModel.js")"></script>
         <script src="@Url.Content("~/Binding/ViewModels/AccountRegisterViewModel.js")"></script>
     }
-@section footerScripts
+@section footerScript
     {
         angular.bootstrap(document.getElementById("registration"), ['accountRegister']);
     }
-<div ng-app="accountRegister" ng-controller="accountRegisterViewModel" id="registration">
+<div ng-app="accountRegister" ng-controller="AccountRegisterViewModel" id="registration">
     <br />
-    @Html.Partial("~/View/Shared/_ValidationErrors.cshtml")
+    @Html.Partial("~/Views/Shared/_ValidationErrors.cshtml")
     <br />
     <div ng-view></div>
 </div>

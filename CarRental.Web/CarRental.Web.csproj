@@ -223,7 +223,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\API\AccountApiController.cs" />
+    <Compile Include="Controllers\API\CustomerApiController.cs" />
+    <Compile Include="Controllers\API\ReservationApiController.cs" />
+    <Compile Include="Core\UsesDisposableServiceAttribute.cs" />
     <Compile Include="Controllers\MVC\AccountController.cs" />
+    <Compile Include="Controllers\MVC\CustomerController.cs" />
     <Compile Include="Core\ApiControllerBase.cs" />
     <Compile Include="Core\IServiceAwareController.cs" />
     <Compile Include="Core\ViewControllerBase.cs" />
@@ -250,8 +254,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Binding\Models\AccountLoginModel.js" />
+    <Content Include="Binding\Models\ReserveCarModel.js" />
     <Content Include="Binding\ViewModels\AccountLoginViewModel.js" />
     <Content Include="Binding\ViewModels\AccountRegisterViewModel.js" />
+    <Content Include="Binding\ViewModels\CurrentReservartionsViewModel.js" />
+    <Content Include="Binding\ViewModels\ReserveCarViewModel.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -824,11 +831,15 @@
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\CarList.html" />
     <Content Include="Templates\RegisterConfirm.html" />
     <Content Include="Templates\RegisterStep1.html" />
     <Content Include="Templates\RegisterStep2.html" />
     <Content Include="Templates\RegisterStep3.html" />
-    <Content Include="Web.config" />
+    <Content Include="Templates\Reserve.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -858,6 +869,10 @@
     <Content Include="Views\Shared\_ValidationErrors.cshtml" />
     <Content Include="Views\Shared\_BottomBar.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Customer\MyAccount.cshtml" />
+    <Content Include="Views\Customer\RentalHistory.cshtml" />
+    <Content Include="Views\Customer\CurrentReservations.cshtml" />
+    <Content Include="Views\Customer\ReserveCar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -915,6 +930,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

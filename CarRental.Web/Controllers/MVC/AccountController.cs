@@ -39,7 +39,7 @@ namespace CarRental.Web.Controllers.MVC
             WebSecurity.Logout();
             return RedirectToAction("Index", "Home");
         }
-        [HttpPost]
+        [HttpGet]
         public ActionResult Register()
         {
             _adapter.Initialize();

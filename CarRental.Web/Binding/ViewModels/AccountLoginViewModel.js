@@ -22,13 +22,13 @@ appMainModule.controller("AccountLoginViewModel", function ($scope, $http, $loca
         viewModelHelper.modelIsValid = $scope.accountModel.isValid;
         viewModelHelper.modelErrors = $scope.accountModel.errors;
         if (viewModelHelper.modelIsValid) {
-            viewModelHelper.apiPost("api/account/login", $scope.accountModel,
+            viewModelHelper.apiPost("api/account/login/confirm", $scope.accountModel,
                 function ($result) {
                     if ($scope.returnUrl != '' && $scope.returnUrl.length > 1) {
 
                         window.location.href = CarRental.rootPath + $scope.returnUrl.substring(1);
                     } else {
-                        window.loction.href = CarRental.rootPath;
+                        window.location.href = CarRental.rootPath;
                     }
 
                 })
