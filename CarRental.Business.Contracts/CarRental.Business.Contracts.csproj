@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Business\CarRental.Busunes.Entities.csproj">
+    <ProjectReference Include="..\Business\CarRental.Business.Entities.csproj">
       <Project>{4d6c2983-55d6-413a-85bf-33fe54bc71bc}</Project>
-      <Name>CarRental.Busunes.Entities</Name>
+      <Name>CarRental.Business.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarRental.Common\CarRental.Common.csproj">
       <Project>{4b7b58df-66a5-48ac-8639-c2a8500bf8de}</Project>

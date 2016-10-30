@@ -50,9 +50,9 @@
     <Compile Include="RepositoryIntefaces\IAccountRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\CarRental.Busunes.Entities.csproj">
+    <ProjectReference Include="..\Business\CarRental.Business.Entities.csproj">
       <Project>{4d6c2983-55d6-413a-85bf-33fe54bc71bc}</Project>
-      <Name>CarRental.Busunes.Entities</Name>
+      <Name>CarRental.Business.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core.Common.Contracts\Core.Common.Contracts.csproj">
       <Project>{1469e3b6-7b20-495d-9aae-37fb555ae785}</Project>

@@ -22,6 +22,7 @@ namespace CarRental.Client.Proxies.Proxies
 
         public Entities.Car[] GetAllAvailableCars(DateTime pickUpDate, DateTime returnDate)
         {
+            
              return Channel.GetAllAvailableCars(pickUpDate, returnDate);
         }
 

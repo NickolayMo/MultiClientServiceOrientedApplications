@@ -51,9 +51,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\CarRental.Busunes.Entities.csproj">
+    <ProjectReference Include="..\Business\CarRental.Business.Entities.csproj">
       <Project>{4d6c2983-55d6-413a-85bf-33fe54bc71bc}</Project>
-      <Name>CarRental.Busunes.Entities</Name>
+      <Name>CarRental.Business.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarRental.Business.Bootstrapper\CarRental.Business.Bootstrapper.csproj">
       <Project>{e8c87824-36a2-4d6a-a897-481664be5100}</Project>

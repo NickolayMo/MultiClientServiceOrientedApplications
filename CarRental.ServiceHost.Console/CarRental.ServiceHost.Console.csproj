@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\CarRental.Busunes.Entities.csproj">
+    <ProjectReference Include="..\Business\CarRental.Business.Entities.csproj">
       <Project>{4D6C2983-55D6-413A-85BF-33FE54BC71BC}</Project>
-      <Name>CarRental.Busunes.Entities</Name>
+      <Name>CarRental.Business.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarRental.Business.Bootstrapper\CarRental.Business.Bootstrapper.csproj">
       <Project>{E8C87824-36A2-4D6A-A897-481664BE5100}</Project>

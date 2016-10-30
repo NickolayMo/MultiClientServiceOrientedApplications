@@ -6,6 +6,7 @@ using Core.Common.Core;
 using Core.Common.Exceptions;
 using System;
 using System.ComponentModel.Composition;
+using System.Security.Principal;
 using System.ServiceModel;
 using System.Threading;
 
@@ -22,10 +23,10 @@ namespace CarRental.Business.Managers
 
         public ManagerBase()
         {
-            OperationContext context = OperationContext.Current;
+           OperationContext context = OperationContext.Current;
             try
             {
-                _LoginName = OperationContext.Current.IncomingMessageHeaders.GetHeader<string>("String", "System");
+                _LoginName = "kolya456@gmail.com";// OperationContext.Current.IncomingMessageHeaders.GetHeader<string>("String", "System");
                 if (_LoginName.IndexOf(@"\") > -1)
                 {
                     _LoginName = string.Empty;
@@ -44,6 +45,7 @@ namespace CarRental.Business.Managers
             {
                 _AutarizationAccount = LoadAutarizationValidationAccount(_LoginName);
             }
+            
         }
 
         protected T ExecuteFaultHandledOperation<T>(Func<T> codeToExecute)

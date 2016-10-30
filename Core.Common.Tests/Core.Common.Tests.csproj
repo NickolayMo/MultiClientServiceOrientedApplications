@@ -62,9 +62,9 @@
     <Compile Include="ObjectBaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\CarRental.Busunes.Entities.csproj">
+    <ProjectReference Include="..\Business\CarRental.Business.Entities.csproj">
       <Project>{4d6c2983-55d6-413a-85bf-33fe54bc71bc}</Project>
-      <Name>CarRental.Busunes.Entities</Name>
+      <Name>CarRental.Business.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarRentall.Client.Entities\CarRental.Client.Entities.csproj">
       <Project>{16bc5d93-352a-4659-a8b7-c54198c69ea8}</Project>

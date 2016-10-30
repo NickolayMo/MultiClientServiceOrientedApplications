@@ -12,6 +12,8 @@ using System.Linq;
 using CarRental.Business.Common;
 using System.Security.Permissions;
 using CarRental.Common;
+using System.Diagnostics;
+using System.Threading;
 
 namespace CarRental.Business.Managers.Managers
 {
@@ -58,10 +60,11 @@ namespace CarRental.Business.Managers.Managers
                 carRepository.Remove(carId);
             });
         }
-        [PrincipalPermission(SecurityAction.Demand, Role = Security.CAR_RENTAL_ADMIN)]
-        [PrincipalPermission(SecurityAction.Demand, Role = Security.CAR_RENTAL_USER)]
+       [PrincipalPermission(SecurityAction.Demand, Role = Security.CAR_RENTAL_ADMIN)]
+       [PrincipalPermission(SecurityAction.Demand, Role = Security.CAR_RENTAL_USER)]
         public Car[] GetAllAvailableCars(DateTime pickUpDate, DateTime returnDate)
         {
+            string userName = Thread.CurrentPrincipal.Identity.Name;
             return ExecuteFaultHandledOperation(()=> {
                 ICarRepository carRepository = _DataRepositoryFactory.GetDataRepository<ICarRepository>();
                 IRentalRepository rentalRepository = _DataRepositoryFactory.GetDataRepository<IRentalRepository>();

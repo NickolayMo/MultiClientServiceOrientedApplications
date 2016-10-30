@@ -38,7 +38,7 @@ namespace CarRental.ServiceHost.Console
 
             SM.ServiceHost rentalManagerHost = new SM.ServiceHost(typeof(RentalManager));
             StartService(rentalManagerHost, "RentalManager");
-            System.Timers.Timer timer = new System.Timers.Timer(10000);
+            System.Timers.Timer timer = new System.Timers.Timer(100000);
             timer.Elapsed += OnTimerElapsed;
             timer.Start();
             

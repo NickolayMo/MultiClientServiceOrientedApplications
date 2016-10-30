@@ -22,7 +22,7 @@ reserveCarModule.controller('ReserveViewModel', function ($scope, $http, $locati
     
     var ReserveCarModelRules = [];
     var setupRules = function () {
-        ReserveCarModelRules.push(new validator.PropertyRule('PickUpdate',
+        ReserveCarModelRules.push(new validator.PropertyRule('PickupDate',
            {
                required: { message: "PickUp date is required" }
            }));
@@ -50,6 +50,8 @@ reserveCarModule.controller('ReserveViewModel', function ($scope, $http, $locati
         if (viewModelHelper.modelIsValid) {
             $scope.reserveCarModel.initialized = true;
             $location.path(CarRental.rootPath + 'customer/reservecar/carlist');
+        } else {
+            viewModelHelper.modelErrors = $scope.reserveCarModel.errors;
         }
 
     }
@@ -68,7 +70,29 @@ reserveCarModule.controller('ReserveViewModel', function ($scope, $http, $locati
 
 });
 
-reserveCarModule.controller('CarListViewModel', function ($scope, $http, $location, $window, viewModelHelper, validator) { 
+reserveCarModule.controller('CarListViewModel', function ($scope, $http, $location, $window, viewModelHelper, validator) {
+    if (!$scope.reserveCarModel.initialized) {
+        $location.path(CarRental+'customer/reservecar');
+    }
+    $scope.init = false;
     viewModelHelper.modelIsValid = true;
     viewModelHelper.modelErrors = [];
+    $scope.viewMode = 'carlist';
+    $scope.cars = [];
+    $scope.reservationNumber = '';
+    $scope.availableCars = function () {
+        viewModelHelper.apiGet('api/reservation/availablecars/' + $scope.reserveCarModel.PickupDate + '/' + $scope.reserveCarModel.ReturnDate, null,
+            function (result) {
+                $scope.cars = result.cars;
+                $scope.init = true;
+            });
+    }
+    $scope.availableCars();
+    $scope.selectCar = function (car) {
+        var model = { PickupDate: car.PickupDate, ReturnDate: car.ReturnDate, Car: car.Id };
+        viewModelHelper.apiPost('api/reservation/reservecar', model, function (result) {
+            $scope.reservationNumber = result.data.ReservationId;
+            $scope.viewMose = 'success';
+        });
+    }
 });
